@@ -1405,162 +1405,177 @@
             </section>
 
             <section class="content-section" id="heroes">
-                <h2 class="section-title">The Heroes: Then and Now!</h2>
-                <div class="color-banner"></div>
-                
-                <div style="max-width: 1000px; margin: 0 auto;">
-                    <!-- Navigation Controls -->
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-                        <button onclick="prevHero()" style="background: var(--accent); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; cursor: pointer; border-radius: 5px; font-family: 'Libre Baskerville', serif;">
-                            ← Previous
-                        </button>
-                        <div style="text-align: center;">
-                            <span id="hero-counter" style="font-size: 1.1rem; font-family: 'Libre Baskerville', serif; font-weight: 700;">1 of 15</span>
-                        </div>
-                        <button onclick="nextHero()" style="background: var(--accent); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; cursor: pointer; border-radius: 5px; font-family: 'Libre Baskerville', serif;">
-                            Next →
-                        </button>
-                    </div>
+    <h2 class="section-title">The Heroes: Then and Now!</h2>
+    <div class="color-banner"></div>
 
-                    <!-- Hero Display Container -->
-                    <div id="hero-display" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
-                        <!-- THEN (Left Side) -->
-                        <div style="border: 3px solid var(--border); padding: 20px; background: var(--memorial); border-radius: 5px;">
-                            <h3 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 10px;">THEN</h3>
-                            <p style="text-align: center; font-style: italic; margin-bottom: 20px; color: var(--subtle);">School Days</p>
-                            
-                            <div style="text-align: center; margin-bottom: 20px;">
-                                <img id="then-photo" src="" alt="Then photo" style="max-width: 100%; height: auto; border: 2px solid var(--border); display: none;">
-                                <div id="then-placeholder" class="image-placeholder" style="min-height: 300px;">Photo placeholder</div>
-                            </div>
-                            
-                            <div style="text-align: center;">
-                                <h4 id="then-name" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 5px;"></h4>
-                                <p id="then-nickname" style="font-style: italic; color: var(--subtle); margin-bottom: 10px;"></p>
-                                <p id="then-location" style="font-weight: 700; color: var(--accent);"></p>
-                            </div>
-                        </div>
+    <!--
+    IMAGE NAMING SCHEMA
+    Folder: images/heroes/
+    Format: firstname.jpg (lowercase)
 
-                        <!-- NOW (Right Side) -->
-                        <div style="border: 3px solid var(--border); padding: 20px; background: var(--memorial); border-radius: 5px;">
-                            <h3 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 10px;">NOW</h3>
-                            <p style="text-align: center; font-style: italic; margin-bottom: 20px; color: var(--subtle);">2025</p>
-                            
-                            <div style="text-align: center; margin-bottom: 20px;">
-                                <img id="now-photo" src="" alt="Now photo" style="max-width: 100%; height: auto; border: 2px solid var(--border); display: none;">
-                                <div id="now-placeholder" class="image-placeholder" style="min-height: 300px;">Photo placeholder</div>
-                            </div>
-                            
-                            <div style="text-align: center;">
-                                <h4 id="now-name" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 5px;"></h4>
-                                <p id="now-nickname" style="font-style: italic; color: var(--subtle); margin-bottom: 10px;"></p>
-                                <p id="now-location" style="font-weight: 700; color: var(--accent);"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    Examples:
+    ajay.jpg
+    manoj.jpg
+    albert.jpg
+    -->
 
-                <script>
-                // Heroes data embedded in HTML
-                const heroesData = [
-  {"then": {"name": "AJAY SINGHANIA", "nickname": "AJAY", "location": "SHILLONG"}, "now": {"name": "MANOJ TALUKDAR", "nickname": "MANOJ", "location": "GUWAHATI"}},
-  {"then": {"name": "ALBERT WARJIRI", "nickname": "ALBERT", "location": "SHILLONG"}, "now": {"name": "MATHUMAL SUDARSHAN", "nickname": "EMU", "location": "KOLKATA"}},
-  {"then": {"name": "AVIJIT SARKAR", "nickname": "AVIJIT", "location": "SILIGURI"}, "now": {"name": "MRINMOY KANTI DASGUPTA", "nickname": "KANTI", "location": "KOLKATA"}},
-  {"then": {"name": "BHASKAR BHUYAN", "nickname": "BHASKAR", "location": "GUWAHATI"}, "now": {"name": "NAVNEET KRISHAN", "nickname": "GROOVY", "location": "PANCHKULA/SILIGURI"}},
-  {"then": {"name": "DEBAPRASAD BISWAS", "nickname": "DEBA", "location": "NAVI MUMBAI"}, "now": {"name": "PRAKASH MORDANI", "nickname": "PRAKASH", "location": "SHILLONG"}},
-  {"then": {"name": "DEBASHISH MAZUMDAR", "nickname": "LAMBU", "location": "KOLKATA"}, "now": {"name": "PRANAB GUPTA", "nickname": "PRANAB", "location": "KOLKATA"}},
-  {"then": {"name": "DEBASHISH RUDRA", "nickname": "RUDRA", "location": "SHILLONG"}, "now": {"name": "RAJKRISH KUMARAN", "nickname": "SANDY", "location": "SINGAPORE"}},
-  {"then": {"name": "DILIP VASWANI", "nickname": "DILIP", "location": "SHILLONG"}, "now": {"name": "RANJIT HAZARIKA", "nickname": "RANJIT", "location": "SIBSAGAR"}},
-  {"then": {"name": "HEMANT PAL SINGH GILL", "nickname": "GILL", "location": "GURGAON"}, "now": {"name": "ROON DOWERAH", "nickname": "ROON", "location": "NAVI MUMBAI"}},
-  {"then": {"name": "MAHESH PRASAD SINGH", "nickname": "MAHESH", "location": "SHILLONG"}, "now": {"name": "SANDEEP RAJKHEWA", "nickname": "SANDEEP", "location": "GUWAHATI"}},
-  {"then": {"name": "SANJEEV SABHARWAL", "nickname": "SABER / SKINNY SHERIFF", "location": "BANGALORE"}, "now": {"name": "UJJAL GOSWAMI", "nickname": "UJJAL", "location": "GUWAHATI"}},
-  {"then": {"name": "SANJOY SARMA", "nickname": "BARNEY", "location": "GURGAON"}, "now": null},
-  {"then": {"name": "SHYAMAL BARUAH", "nickname": "SHYAMAL", "location": "GUWAHATI"}, "now": null},
-  {"then": {"name": "SUNIL KALE", "nickname": "KALE", "location": "VANCOUVER CANADA"}, "now": null},
-  {"then": {"name": "DIPANKAR NANDI ( TIATOSHI PONGENER)", "nickname": "DIPANKAR", "location": "DIMAPUR"}, "now": null}
-];
+    <div class="heroes-grid">
 
-                let currentIndex = 0;
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/ajay.jpg</div>
+            <div class="hero-name">Ajay Singhania</div>
+            <p class="byline">Nickname: <strong>Ajay</strong> · Location: <strong>Shillong</strong></p>
+        </div>
 
-                function displayHero(index) {
-                    const hero = heroesData[index];
-                    
-                    // Update THEN section
-                    document.getElementById('then-name').textContent = hero.then.name;
-                    document.getElementById('then-nickname').textContent = `(${hero.then.nickname})`;
-                    document.getElementById('then-location').textContent = hero.then.location;
-                    
-                    // Try to load THEN photo
-                    const thenPhoto = document.getElementById('then-photo');
-                    const thenPlaceholder = document.getElementById('then-placeholder');
-                    const thenFilename = `heroes/${hero.then.nickname.toLowerCase().replace(/\s+/g, '-')}-then.jpg`;
-                    
-                    const thenImg = new Image();
-                    thenImg.onload = function() {
-                        thenPhoto.src = thenFilename;
-                        thenPhoto.style.display = 'block';
-                        thenPlaceholder.style.display = 'none';
-                    };
-                    thenImg.onerror = function() {
-                        thenPhoto.style.display = 'none';
-                        thenPlaceholder.style.display = 'flex';
-                        thenPlaceholder.textContent = `THEN photo: ${hero.then.nickname}`;
-                    };
-                    thenImg.src = thenFilename;
-                    
-                    // Update NOW section
-                    if (hero.now) {
-                        document.getElementById('now-name').textContent = hero.now.name;
-                        document.getElementById('now-nickname').textContent = `(${hero.now.nickname})`;
-                        document.getElementById('now-location').textContent = hero.now.location;
-                        
-                        // Try to load NOW photo
-                        const nowPhoto = document.getElementById('now-photo');
-                        const nowPlaceholder = document.getElementById('now-placeholder');
-                        const nowFilename = `heroes/${hero.now.nickname.toLowerCase().replace(/\s+/g, '-')}-now.jpg`;
-                        
-                        const nowImg = new Image();
-                        nowImg.onload = function() {
-                            nowPhoto.src = nowFilename;
-                            nowPhoto.style.display = 'block';
-                            nowPlaceholder.style.display = 'none';
-                        };
-                        nowImg.onerror = function() {
-                            nowPhoto.style.display = 'none';
-                            nowPlaceholder.style.display = 'flex';
-                            nowPlaceholder.textContent = `NOW photo: ${hero.now.nickname}`;
-                        };
-                        nowImg.src = nowFilename;
-                    } else {
-                        // No NOW person for this entry
-                        document.getElementById('now-name').textContent = '';
-                        document.getElementById('now-nickname').textContent = '';
-                        document.getElementById('now-location').textContent = '';
-                        document.getElementById('now-photo').style.display = 'none';
-                        document.getElementById('now-placeholder').style.display = 'flex';
-                        document.getElementById('now-placeholder').textContent = 'No paired entry';
-                    }
-                    
-                    // Update counter
-                    document.getElementById('hero-counter').textContent = `${index + 1} of ${heroesData.length}`;
-                }
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/manoj.jpg</div>
+            <div class="hero-name">Manoj Talukdar</div>
+            <p class="byline">Nickname: <strong>Manoj</strong> · Location: <strong>Guwahati</strong></p>
+        </div>
 
-                function nextHero() {
-                    currentIndex = (currentIndex + 1) % heroesData.length;
-                    displayHero(currentIndex);
-                }
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/albert.jpg</div>
+            <div class="hero-name">Albert Warjiri</div>
+            <p class="byline">Nickname: <strong>Albert</strong> · Location: <strong>Shillong</strong></p>
+        </div>
 
-                function prevHero() {
-                    currentIndex = (currentIndex - 1 + heroesData.length) % heroesData.length;
-                    displayHero(currentIndex);
-                }
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/mathumal.jpg</div>
+            <div class="hero-name">Mathumal Sudarshan</div>
+            <p class="byline">Nickname: <strong>Emu</strong> · Location: <strong>Kolkata</strong></p>
+        </div>
 
-                // Initialize with first hero
-                displayHero(0);
-                </script>
-            
-                <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
-            </section>
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/avijit.jpg</div>
+            <div class="hero-name">Avijit Sarkar</div>
+            <p class="byline">Nickname: <strong>Avijit</strong> · Location: <strong>Kolkata</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/mrinmoy.jpg</div>
+            <div class="hero-name">Mrinmoy Kanti Dasgupta</div>
+            <p class="byline">Nickname: <strong>Toshi</strong> · Location: <strong>Kolkata</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/navneet.jpg</div>
+            <div class="hero-name">Navneet Krishan</div>
+            <p class="byline">Nickname: <strong>Navneet</strong> · Location: <strong>Delhi</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/bhaskar.jpg</div>
+            <div class="hero-name">Bhaskar Bhuyan</div>
+            <p class="byline">Nickname: <strong>Bhaskar</strong> · Location: <strong>Guwahati</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/prakash.jpg</div>
+            <div class="hero-name">Prakash Mordani</div>
+            <p class="byline">Nickname: <strong>Prakash</strong> · Location: <strong>Mumbai</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/debaprasad.jpg</div>
+            <div class="hero-name">Debaprasad Biswas</div>
+            <p class="byline">Nickname: <strong>Deba</strong> · Location: <strong>Kolkata</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/pranab.jpg</div>
+            <div class="hero-name">Pranab Gupta</div>
+            <p class="byline">Nickname: <strong>Pranab</strong> · Location: <strong>Shillong</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/debashish-m.jpg</div>
+            <div class="hero-name">Debashish Mazumdar</div>
+            <p class="byline">Nickname: <strong>Deba</strong> · Location: <strong>Kolkata</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/rajkrish.jpg</div>
+            <div class="hero-name">Rajkrish Kumaran</div>
+            <p class="byline">Nickname: <strong>Raj</strong> · Location: <strong>Bangalore</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/debashish-r.jpg</div>
+            <div class="hero-name">Debashish Rudra</div>
+            <p class="byline">Nickname: <strong>Rudra</strong> · Location: <strong>Kolkata</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/ranjit.jpg</div>
+            <div class="hero-name">Ranjit Hazarika</div>
+            <p class="byline">Nickname: <strong>Ranjit</strong> · Location: <strong>Guwahati</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/dilip.jpg</div>
+            <div class="hero-name">Dilip Vaswani</div>
+            <p class="byline">Nickname: <strong>Dilip</strong> · Location: <strong>Mumbai</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/hemant.jpg</div>
+            <div class="hero-name">Hemant Pal Singh Gill</div>
+            <p class="byline">Nickname: <strong>Hemant</strong> · Location: <strong>Chandigarh</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/roon.jpg</div>
+            <div class="hero-name">Roon Dowerah</div>
+            <p class="byline">Nickname: <strong>Roon</strong> · Location: <strong>Shillong</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/mahesh.jpg</div>
+            <div class="hero-name">Mahesh Prasad Singh</div>
+            <p class="byline">Nickname: <strong>Mahesh</strong> · Location: <strong>Patna</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/sandeep.jpg</div>
+            <div class="hero-name">Sandeep Rajkhewa</div>
+            <p class="byline">Nickname: <strong>Sandeep</strong> · Location: <strong>Mumbai</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/sanjeev.jpg</div>
+            <div class="hero-name">Sanjeev Sabharwal</div>
+            <p class="byline">Nickname: <strong>Sanjeev</strong> · Location: <strong>Gurgaon</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/ujjal.jpg</div>
+            <div class="hero-name">Ujjal Goswami</div>
+            <p class="byline">Nickname: <strong>Ujjal</strong> · Location: <strong>Guwahati</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/sanjoy.jpg</div>
+            <div class="hero-name">Sanjoy Sarma</div>
+            <p class="byline">Nickname: <strong>Barney</strong> · Location: <strong>Gurgaon</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/shyamal.jpg</div>
+            <div class="hero-name">Shyamal Baruah</div>
+            <p class="byline">Nickname: <strong>Shyamal</strong> · Location: <strong>Guwahati</strong></p>
+        </div>
+
+        <div class="hero-card">
+            <div class="image-placeholder">images/heroes/sunil.jpg</div>
+            <div class="hero-name">Sunil Kale</div>
+            <p class="byline">Nickname: <strong>Kale</strong> · Location: <strong>Vancouver, Canada</strong></p>
+        </div>
+
+    </div>
+
+    <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
+</section>
+
 
             <section class="content-section" id="honors">
                 <h2 class="section-title">Honouring Students: Name and Year of Admission</h2>
