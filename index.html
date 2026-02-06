@@ -4625,13 +4625,13 @@
             slides.forEach(slide => slide.classList.remove('active'));
             
             // Show the selected slide
-            const activeSlide = document.querySelector(`.carousel-slide[data-class="${classNumber}"]`);
+            const activeSlide = document.querySelector(`.carousel-slide[data-class="${yearNumber}"]`);
             if (activeSlide) {
                 activeSlide.classList.add('active');
             }
             
             // Update indicator
-            document.getElementById('carousel-position').textContent = `Class ${yearNames[classNumber - 1]}`;
+            document.getElementById('carousel-position').textContent = `Class ${yearNames[yearNumber - 1]}`;
         }
 
         function nextYearPair() {
