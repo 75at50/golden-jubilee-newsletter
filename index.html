@@ -4622,16 +4622,16 @@
         function showYearPair(yearNumber) {
             // Hide all slides
             const slides = document.querySelectorAll('.carousel-slide');
-            slides.forEach(slide => slide.yearList.remove('active'));
+            slides.forEach(slide => slide.classList.remove('active'));
             
             // Show the selected slide
-            const activeSlide = document.querySelector(`.carousel-slide[data-class="${yearNumber}"]`);
+            const activeSlide = document.querySelector(`.carousel-slide[data-class="${classNumber}"]`);
             if (activeSlide) {
                 activeSlide.classList.add('active');
             }
             
             // Update indicator
-            document.getElementById('carousel-position').textContent = `Class ${yearNames[yearNumber - 1]}`;
+            document.getElementById('carousel-position').textContent = `Class ${yearNames[classNumber - 1]}`;
         }
 
         function nextYearPair() {
