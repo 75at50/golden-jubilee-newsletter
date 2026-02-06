@@ -4510,7 +4510,7 @@
         let currentPotpourriIndex = 0;
         let potpourriInterval;
         let isPotpourriPlaying = false;
-        const totalPotpourriSlides = 14;
+        const totalPotpourriSlides = 53;
 
         function showPotpourriSlide(index) {
             const slides = document.querySelectorAll('.potpourri-slide');
@@ -4548,7 +4548,7 @@
                 playPauseBtn.textContent = '⏸ Pause';
                 
                 // Start the slideshow interval from current position
-                potpourriInterval = setInterval(nextPotpourriSlide, 10000);
+                potpourriInterval = setInterval(nextPotpourriSlide, 3000);
                 
                 // Play the audio from current position (resumes where it was paused)
                 if (audio) {
