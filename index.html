@@ -3730,8 +3730,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousEateriesSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextEateriesSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('eateries-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('eateries-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3771,8 +3771,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousFruitsSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextFruitsSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('fruits-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('fruits-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3816,8 +3816,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousCinemaSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextCinemaSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('cinema-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('cinema-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3887,8 +3887,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousMusicSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextMusicSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('music-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('music-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3963,8 +3963,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousMagazinesSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextMagazinesSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('magazine-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('magazine-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3997,8 +3997,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousComicsSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextComicsSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('comics-slideshow)">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('comics-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4038,8 +4038,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousConfectioneriesSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextConfectioneriesSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('confectionaries-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('confectionaries-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4106,8 +4106,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousFadsSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextFadsSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('fads-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('fads-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4175,8 +4175,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousFashionSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextFashionSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('fashion-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('fashion-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4263,8 +4263,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousShillongSlide()">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextShillongSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('shillong-slideshow')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('shillong-slideshow')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4834,224 +4834,40 @@
 
         /* Photo Essay Slideshow Functions */
         // Eateries Slideshow
-        let currentEateriesIndex = 0;
-        const totalEateriesSlides = 6;
 
-        function showEateriesSlide(index) {
-            const slides = document.querySelectorAll('#eateries-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
+        const slideshows = {
+            'eateries-slideshow': {current : 0, total : 6},
+            'fruits-slideshow' : {current : 0, total : 7},
+            'cinema-slideshow' : {current : 0, total : 5},
+            'music-slideshow' : {current : 0, total : 12},
+            'magazines-slideshow' : {current : 0, total : 10},
+            'comics-slideshow' : {current : 0, total : 4},
+            'confectionaries-slideshow' : {current : 0, total : 3},
+            'fads-slideshow' : {current : 0, total : 9},
+            'fashion-slideshow' : {current : 0, total : 4},
+            'shillong-slideshow' : {current : 0, total : 14},
+        }
+
+        function showSlide(slideshowId, index){
+            const slides = document.querySelectorAll('#${slideshowId} .essay-slide');
+            slides.forEach((slide,i) => {
+            slide.classList.remove('active');
+            if (i === index) slide.classList.add('active');
             });
         }
 
-        function nextEateriesSlide() {
-            currentEateriesIndex = (currentEateriesIndex + 1) % totalEateriesSlides;
-            showEateriesSlide(currentEateriesIndex);
+        function nextSlide(slideshowId){
+            const slideshow = slideshows[slideshowId];
+            slideshow.current= (slideshow.current +1) % slideshow.total;
+            showSlide(slideshow.current);
         }
 
-        function previousEateriesSlide() {
-            currentEateriesIndex = (currentEateriesIndex - 1 + totalEateriesSlides) % totalEateriesSlides;
-            showEateriesSlide(currentEateriesIndex);
+        function previousSlide(slideshowId){
+            const slideshow = slideshows[slideshowId];
+            slideshow.current = (slideshow.current - 1 + slideshow.total) & slideshow.total;
+            showSlide(slideshow.current);
         }
-
-        // Fruits Slideshow
-        let currentFruitsIndex = 0;
-        const totalFruitsSlides = 7;
-
-        function showFruitsSlide(index) {
-            const slides = document.querySelectorAll('#fruits-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextFruitsSlide() {
-            currentFruitsIndex = (currentFruitsIndex + 1) % totalFruitsSlides;
-            showFruitsSlide(currentFruitsIndex);
-        }
-
-        function previousFruitsSlide() {
-            currentFruitsIndex = (currentFruitsIndex - 1 + totalFruitsSlides) % totalFruitsSlides;
-            showFruitsSlide(currentFruitsIndex);
-        }
-
-        // Cinema Slideshow
-        let currentCinemaIndex = 0;
-        const totalCinemaSlides = 5;
-
-        function showCinemaSlide(index) {
-            const slides = document.querySelectorAll('#cinema-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextCinemaSlide() {
-            currentCinemaIndex = (currentCinemaIndex + 1) % totalCinemaSlides;
-            showCinemaSlide(currentCinemaIndex);
-        }
-
-        function previousCinemaSlide() {
-            currentCinemaIndex = (currentCinemaIndex - 1 + totalCinemaSlides) % totalCinemaSlides;
-            showCinemaSlide(currentCinemaIndex);
-        }
-
-        // Music Slideshow
-        let currentMusicIndex = 0;
-        const totalMusicSlides = 12;
-
-        function showMusicSlide(index) {
-            const slides = document.querySelectorAll('#music-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextMusicSlide() {
-            currentMusicIndex = (currentMusicIndex + 1) % totalMusicSlides;
-            showMusicSlide(currentMusicIndex);
-        }
-
-        function previousMusicSlide() {
-            currentMusicIndex = (currentMusicIndex - 1 + totalMusicSlides) % totalMusicSlides;
-            showMusicSlide(currentMusicIndex);
-        }
-
-        // Magazines Slideshow
-        let currentMagazinesIndex = 0;
-        const totalMagazinesSlides = 10;
-
-        function showMagazinesSlide(index) {
-            const slides = document.querySelectorAll('#magazines-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextMagazinesSlide() {
-            currentMagazinesIndex = (currentMagazinesIndex + 1) % totalMagazinesSlides;
-            showMagazinesSlide(currentMagazinesIndex);
-        }
-
-        function previousMagazinesSlide() {
-            currentMagazinesIndex = (currentMagazinesIndex - 1 + totalMagazinesSlides) % totalMagazinesSlides;
-            showMagazinesSlide(currentMagazinesIndex);
-        }
-
-        // Comics Slideshow
-        let currentComicsIndex = 0;
-        const totalComicsSlides = 4;
-
-        function showComicsSlide(index) {
-            const slides = document.querySelectorAll('#comics-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextComicsSlide() {
-            currentComicsIndex = (currentComicsIndex + 1) % totalComicsSlides;
-            showComicsSlide(currentComicsIndex);
-        }
-
-        function previousComicsSlide() {
-            currentComicsIndex = (currentComicsIndex - 1 + totalComicsSlides) % totalComicsSlides;
-            showComicsSlide(currentComicsIndex);
-        }
-
-        // Confectioneries Slideshow
-        let currentConfectioneriesIndex = 0;
-        const totalConfectioneriesSlides = 3;
-
-        function showConfectioneriesSlide(index) {
-            const slides = document.querySelectorAll('#confectioneries-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextConfectioneriesSlide() {
-            currentConfectioneriesIndex = (currentConfectioneriesIndex + 1) % totalConfectioneriesSlides;
-            showConfectioneriesSlide(currentConfectioneriesIndex);
-        }
-
-        function previousConfectioneriesSlide() {
-            currentConfectioneriesIndex = (currentConfectioneriesIndex - 1 + totalConfectioneriesSlides) % totalConfectioneriesSlides;
-            showConfectioneriesSlide(currentConfectioneriesIndex);
-        }
-
-        // Fads Slideshow
-        let currentFadsIndex = 0;
-        const totalFadsSlides = 9;
-
-        function showFadsSlide(index) {
-            const slides = document.querySelectorAll('#fads-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextFadsSlide() {
-            currentFadsIndex = (currentFadsIndex + 1) % totalFadsSlides;
-            showFadsSlide(currentFadsIndex);
-        }
-
-        function previousFadsSlide() {
-            currentFadsIndex = (currentFadsIndex - 1 + totalFadsSlides) % totalFadsSlides;
-            showFadsSlide(currentFadsIndex);
-        }
-
-        // Fashion Slideshow
-        let currentFashionIndex = 0;
-        const totalFashionSlides = 4;
-
-        function showFashionSlide(index) {
-            const slides = document.querySelectorAll('#fashion-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextFashionSlide() {
-            currentFashionIndex = (currentFashionIndex + 1) % totalFashionSlides;
-            showFashionSlide(currentFashionIndex);
-        }
-
-        function previousFashionSlide() {
-            currentFashionIndex = (currentFashionIndex - 1 + totalFashionSlides) % totalFashionSlides;
-            showFashionSlide(currentFashionIndex);
-        }
-
-        // Shillong Slideshow
-        let currentShillongIndex = 0;
-        const totalShillongSlides = 14;
-
-        function showShillongSlide(index) {
-            const slides = document.querySelectorAll('#shillong-slideshow .essay-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-        }
-
-        function nextShillongSlide() {
-            currentShillongIndex = (currentShillongIndex + 1) % totalShillongSlides;
-            showShillongSlide(currentShillongIndex);
-        }
-
-        function previousShillongSlide() {
-            currentShillongIndex = (currentShillongIndex - 1 + totalShillongSlides) % totalShillongSlides;
-            showShillongSlide(currentShillongIndex);
-        }
+        
     </script>
 </body>
 </html>
