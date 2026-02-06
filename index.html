@@ -4617,7 +4617,7 @@
         // Students Honoring Photo Carousel Functions
         let currentYearIndex = 1;
         const totalYears = 11;
-        const yearNames = ['66', '66_67', '67', '67_68', '69_70', '70_71', '72', '72_73', '73_74', '74', '74_75'];
+        const yearNames = ['66', '66_67', '68', '69', '70_71', '71', '72', '72_73', '73', '73_74', '74_75'];
 
         function showYearPair(yearNumber) {
             // Hide all slides
@@ -4631,7 +4631,7 @@
             }
             
             // Update indicator
-            document.getElementById('carousel-position').textContent = `Class ${yearNames[yearNumber - 1]}`;
+            document.getElementById('carousel-position').textContent = `${yearNames[yearNumber - 1]}`;
         }
 
         function nextYearPair() {
