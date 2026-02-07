@@ -122,9 +122,12 @@
             object-fit: contain;
             border-radius: 8px;
             display: block;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
          }
+
+        .hero-image:not(.lead-article .hero-image){
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;            
+        }
 
         .hero-image:not(.lead-article .hero-image):hover {
             transform: translateY(-5px);
@@ -132,11 +135,7 @@
         }
 
         /* Keep images flat in March of Time section since they have boxes */
-        .lead-article .hero-image {
-            box-shadow: none;
-            transform: none;
-        }
-
+        
 
         .lead-article h2 {
             font-family: 'Playfair Display', serif;
