@@ -109,33 +109,23 @@
             padding: 40px 60px;
         }
 
-        /* March of Time Article */
-        .lead-article {
-            border-bottom: 3px double var(--border);
-            padding-bottom: 40px;
-            margin-bottom: 40px;
-        }
-
         .hero-image {
             width: 100%;
             aspect-ratio: 4 / 5;
             object-fit: contain;
             border-radius: 8px;
             display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
          }
 
-        .hero-image:not(.lead-article .hero-image){
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;            
-        }
 
-        .hero-image:not(.lead-article .hero-image):hover {
+        .hero-image:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
-        /* Keep images flat in March of Time section since they have boxes */
-        
+              
 
         .lead-article h2 {
             font-family: 'Playfair Display', serif;
@@ -187,14 +177,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        /* Keep grey boxes only for March of Time section */
-        .lead-article .image-placeholder {
-            background: linear-gradient(135deg, #e8e8e8 0%, #f0f0f0 100%);
-            border: 2px dashed var(--border);
-            padding: 40px;
-            min-height: 300px;
         }
 
         .image-caption {
@@ -429,12 +411,6 @@
             min-height: auto;
             padding: 0;
             font-size: 0.9rem;
-        }
-
-        /* Keep styling for March of Time hero comparison */
-        .lead-article .hero-comparison .image-placeholder {
-            min-height: 200px;
-            padding: 20px;
         }
 
         .hero-name {
