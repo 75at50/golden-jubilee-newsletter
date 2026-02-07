@@ -4468,9 +4468,9 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousPotpourriSlide()">← Previous</button>
-                    <button class="slideshow-btn" id="potpourri-play-pause" onclick="togglePotpourriPlayPause()">▶ Play</button>
-                    <button class="slideshow-btn" onclick="nextPotpourriSlide()">Next →</button>
+                    <button class="slideshow-btn" onclick="previousPotpourriSlide()">←</button>             
+                    <button class="slideshow-btn" id="potpourri-play-pause" onclick="togglePotpourriPlayPause()">▶</button>
+                    <button class="slideshow-btn" onclick="nextPotpourriSlide()">→</button>
                 </div>
                 
                 <!-- Hidden audio element for potpourri slideshow -->
@@ -4693,7 +4693,7 @@
             if (!isPotpourriPlaying) {
                 // Start playing
                 isPotpourriPlaying = true;
-                playPauseBtn.textContent = '⏸ Pause';
+                playPauseBtn.textContent = '⏸';
                 
                 // Start the slideshow interval from current position
                 potpourriInterval = setInterval(nextPotpourriSlide, 3000);
