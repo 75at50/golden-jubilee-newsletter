@@ -75,7 +75,6 @@
             position: relative;
         }
 
-        /* Emblem above title */
         .masthead-emblem {
             width: 240px;
             height: 240px;
@@ -188,7 +187,6 @@
             font-family: 'Libre Baskerville', serif;
         }
 
-        /* Table of Contents */
         .toc-section {
             background: linear-gradient(135deg, rgba(139, 0, 0, 0.03) 0%, rgba(139, 0, 0, 0.01) 100%);
             border: 3px double var(--ink);
@@ -4833,7 +4831,7 @@
 
         function previousSlide(slideshowId){
             const slideshow = slideshows[slideshowId];
-            slideshow.current = (slideshow.current - 1 + slideshow.total) & slideshow.total;
+            slideshow.current = (slideshow.current - 1 + slideshow.total) % slideshow.total;
             showSlide(slideshowId, slideshow.current);
         }
         
