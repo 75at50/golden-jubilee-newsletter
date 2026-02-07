@@ -4858,13 +4858,13 @@
         function nextSlide(slideshowId){
             const slideshow = slideshows[slideshowId];
             slideshow.current = (slideshow.current +1) % slideshow.total;
-            showSlide(slideshow.current);
+            showSlide(slideshowId, slideshow.current);
         }
 
         function previousSlide(slideshowId){
             const slideshow = slideshows[slideshowId];
             slideshow.current = (slideshow.current - 1 + slideshow.total) & slideshow.total;
-            showSlide(slideshow.current);
+            showSlide(slideshowId, slideshow.current);
         }
         
     </script>
