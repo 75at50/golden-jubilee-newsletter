@@ -4849,7 +4849,7 @@
         };
 
         function showSlide(slideshowId, index){
-            const slides = document.querySelectorAll('#${slideshowId} .essay-slide');
+            const slides = document.querySelectorAll(`#${slideshowId} .essay-slide`);
             slides.forEach((slide,i) => {
             slide.classList.remove('active');
             if (i === index) slide.classList.add('active');
