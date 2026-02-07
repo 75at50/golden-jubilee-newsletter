@@ -116,7 +116,7 @@
             margin-bottom: 40px;
         }
 
-        .hero-image {
+        .hero-image:not(.lead {
             width: 100%;
             aspect-ratio: 4 / 5;
             object-fit: contain;
@@ -3730,8 +3730,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('eateries-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('eateries-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('eateries')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('eateries')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3771,8 +3771,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('fruits-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('fruits-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('fruits')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('fruits')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3816,8 +3816,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('cinema-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('cinema-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('cinema')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('cinema')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3887,8 +3887,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('music-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('music-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('music')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('music')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3963,8 +3963,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('magazine-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('magazine-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('magazines')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('magazines')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -3997,8 +3997,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('comics-slideshow)">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('comics-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('comics)">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('comics')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4038,8 +4038,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('confectionaries-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('confectionaries-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('confectionaries')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('confectionaries')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4106,8 +4106,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('fads-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('fads-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('fads')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('fads')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4175,8 +4175,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('fashion-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('fashion-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('fashion')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('fashion')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4263,8 +4263,8 @@
                 </div>
                 
                 <div class="slideshow-controls">
-                    <button class="slideshow-btn" onclick="previousSlide('shillong-slideshow')">← Previous</button>
-                    <button class="slideshow-btn" onclick="nextSlide('shillong-slideshow')">Next →</button>
+                    <button class="slideshow-btn" onclick="previousSlide('shillong')">← Previous</button>
+                    <button class="slideshow-btn" onclick="nextSlide('shillong')">Next →</button>
                 </div>
             
                 <a href="#toc" class="back-to-toc">↑ Back to Table of Contents</a>
@@ -4833,26 +4833,25 @@
         }
 
         /* Photo Essay Slideshow Functions */
-        // Eateries Slideshow
 
         const slideshows = {
-            'eateries-slideshow': {current : 0, total : 6},
-            'fruits-slideshow' : {current : 0, total : 7},
-            'cinema-slideshow' : {current : 0, total : 5},
-            'music-slideshow' : {current : 0, total : 12},
-            'magazines-slideshow' : {current : 0, total : 10},
-            'comics-slideshow' : {current : 0, total : 4},
-            'confectionaries-slideshow' : {current : 0, total : 3},
-            'fads-slideshow' : {current : 0, total : 9},
-            'fashion-slideshow' : {current : 0, total : 4},
-            'shillong-slideshow' : {current : 0, total : 14},
+            'eateries': {current : 0, total : 6},
+            'fruits' : {current : 0, total : 7},
+            'cinema' : {current : 0, total : 5},
+            'music' : {current : 0, total : 12},
+            'magazines' : {current : 0, total : 10},
+            'comics' : {current : 0, total : 4},
+            'confectionaries' : {current : 0, total : 3},
+            'fads' : {current : 0, total : 9},
+            'fashion' : {current : 0, total : 4},
+            'shillong' : {current : 0, total : 14},
         };
 
-        function showSlide(slideshowId, index){
-            const slides = document.querySelectorAll(`#${slideshowId} .essay-slide`);
-            slides.forEach((slide,i) => {
-            slide.classList.remove('active');
-            if (i === index) slide.classList.add('active');
+        function showSlide(slideshowId, index) {
+            const slides = document.querySelectorAll(`#${slideshowId}-slideshow .essay-slide`);
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) slide.classList.add('active');
             });
         }
 
