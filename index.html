@@ -4844,7 +4844,7 @@
             'confectioneries' : {current : 0, total : 3},
             'fads' : {current : 0, total : 9},
             'fashion' : {current : 0, total : 4},
-            'shillong' : {current : 0, total : 14},
+            'shillong' : {current : 0, total : 14}
         };
 
         function showSlide(slideshowId, index) {
@@ -4857,7 +4857,7 @@
 
         function nextSlide(slideshowId){
             const slideshow = slideshows[slideshowId];
-            slideshow.current= (slideshow.current +1) % slideshow.total;
+            slideshow.current = (slideshow.current +1) % slideshow.total;
             showSlide(slideshow.current);
         }
 
