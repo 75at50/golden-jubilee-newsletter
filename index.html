@@ -126,7 +126,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
          }
 
-        .hero-image:hover {
+        .hero-image:not(.lead-article .hero-image):hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
@@ -135,11 +135,6 @@
         .lead-article .hero-image {
             box-shadow: none;
             transform: none;
-        }
-
-        .lead-article .hero-image:hover {
-            transform: none;
-            box-shadow: none;
         }
 
 
