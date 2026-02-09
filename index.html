@@ -4688,7 +4688,18 @@
         let currentPotpourriIndex = 0;
         let potpourriInterval;
         let isPotpourriPlaying = false;
+        let currentAudioIndex = 0;
+        const audios = document.querySelectorAll('[id^="potpourri-audio"]');
         const totalPotpourriSlides = 55;
+
+        audios.forEach((audio,index) => {
+                audio.addEventListener('ended', () => {
+                    currentAudioIndex = (index + 1) % audios.length;
+                    if (isPotpourriPlaying) {
+                        audios[currentAudioIndex].play();
+                    }
+                });
+            });
 
         function showPotpourriSlide(index) {
             const slides = document.querySelectorAll('.potpourri-slide');
@@ -4717,7 +4728,6 @@
         }
 
         function togglePotpourriPlayPause() {
-            const audio = document.querySelectorAll('[id^="potpourri-audio"]');
             const playPauseBtn = document.getElementById('potpourri-play-pause');
             
             if (!isPotpourriPlaying) {
@@ -4729,11 +4739,9 @@
                 potpourriInterval = setInterval(nextPotpourriSlide, 3000);
                 
                 // Play the audio from current position (resumes where it was paused)
-                if (audio) {
-                    audio.play().catch(err => {
-                        console.log('Audio play prevented:', err);
-                    });
-                }
+                audios[currentAudioIndex].play().catch(err => {
+            console.log('Audio play prevented:', err);
+        });
             } else {
                 // Pause
                 isPotpourriPlaying = false;
@@ -4746,9 +4754,7 @@
                 }
                 
                 // Pause the audio (keeps current position for resume)
-                if (audio) {
-                    audio.pause();
-                }
+                audios[currentAudioIndex].pause();
             }
         }
 
